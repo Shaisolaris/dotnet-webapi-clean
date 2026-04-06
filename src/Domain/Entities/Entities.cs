@@ -1,3 +1,8 @@
+using Domain.Enums;
+using Domain.Events;
+using Domain.Exceptions;
+using Domain.ValueObjects;
+
 namespace Domain.Entities;
 
 public abstract class BaseEntity
