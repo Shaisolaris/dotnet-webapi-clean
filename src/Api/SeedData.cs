@@ -1,6 +1,7 @@
 namespace Api;
 
 using Domain.Entities;
+using Domain.Enums;
 using Infrastructure.Data;
 
 public static class SeedData
