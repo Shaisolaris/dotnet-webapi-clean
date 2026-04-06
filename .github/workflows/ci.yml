@@ -13,4 +13,4 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - run: dotnet restore src/Api/Api.csproj
-      - run: dotnet build src/Api/Api.csproj --no-restore --warnaserror-
+      - run: dotnet build src/Api/Api.csproj --no-restore
