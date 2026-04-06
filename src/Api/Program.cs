@@ -1,3 +1,4 @@
+// Demo mode: InMemory database with seed data loaded on startup
 using Api;
 using Api.Middleware;
 using Application.Interfaces;
