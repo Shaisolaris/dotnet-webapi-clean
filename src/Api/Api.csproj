@@ -3,7 +3,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Api</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Domain\**\*.cs" LinkBase="Domain" />
+    <Compile Include="..\Application\**\*.cs" LinkBase="Application" />
+    <Compile Include="..\Infrastructure\**\*.cs" LinkBase="Infrastructure" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
