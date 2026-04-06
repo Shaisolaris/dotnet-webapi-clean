@@ -1,5 +1,7 @@
 # dotnet-webapi-clean
 
+![CI](https://github.com/Shaisolaris/dotnet-webapi-clean/actions/workflows/ci.yml/badge.svg)
+
 ASP.NET Core 8 Web API implementing Clean Architecture with CQRS via MediatR, Entity Framework Core, domain-driven design patterns (entities, value objects, domain events), repository pattern with Unit of Work, global exception handling, and Swagger documentation.
 
 ## Stack
