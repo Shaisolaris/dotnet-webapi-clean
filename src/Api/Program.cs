@@ -1,3 +1,4 @@
+using Api;
 using Api.Middleware;
 using Application.Interfaces;
 using Infrastructure.Data;
@@ -45,4 +46,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope()) { var db = scope.ServiceProvider.GetRequiredService<Infrastructure.Data.AppDbContext>(); SeedData.Initialize(db); }
 app.Run();
