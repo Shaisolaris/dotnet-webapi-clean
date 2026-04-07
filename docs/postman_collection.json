@@ -1,0 +1,39 @@
+{
+  "info": {
+    "name": "dotnet-webapi-clean",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": ".NET 8 Clean Architecture Web API with MediatR CQRS"
+  },
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:5000/api"},
+    {"key": "token", "value": ""}
+  ],
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {"name": "List Products", "request": {"method": "GET", "url": "{{baseUrl}}/products"}},
+        {"name": "Get Product", "request": {"method": "GET", "url": "{{baseUrl}}/products/:id"}},
+        {"name": "Create Product", "request": {"method": "POST", "url": "{{baseUrl}}/products", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\"name\": \"New Product\", \"description\": \"Product description\", \"price\": 29.99}"}}},
+        {"name": "Update Stock", "request": {"method": "PATCH", "url": "{{baseUrl}}/products/:id/stock", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\"quantityChange\": 50}"}}}
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {"name": "List Orders", "request": {"method": "GET", "url": "{{baseUrl}}/orders"}},
+        {"name": "Get Order", "request": {"method": "GET", "url": "{{baseUrl}}/orders/:id"}},
+        {"name": "Create Order", "request": {"method": "POST", "url": "{{baseUrl}}/orders", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\"customerId\": \"00000000-0000-0000-0000-000000000001\", \"items\": [{\"productId\": \"00000000-0000-0000-0000-000000000001\", \"quantity\": 2}]}"}}},
+        {"name": "Confirm Order", "request": {"method": "POST", "url": "{{baseUrl}}/orders/:id/confirm"}},
+        {"name": "Get Orders by Customer", "request": {"method": "GET", "url": "{{baseUrl}}/orders/customer/:customerId"}}
+      ]
+    },
+    {
+      "name": "Health",
+      "item": [
+        {"name": "Health Check", "request": {"method": "GET", "url": "http://localhost:5000/health"}},
+        {"name": "Swagger", "request": {"method": "GET", "url": "http://localhost:5000/swagger"}}
+      ]
+    }
+  ]
+}
